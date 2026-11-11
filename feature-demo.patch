@@ -1,0 +1,43 @@
+From 46eadce86c4699d3fd354b9f6998c86b5db9f38e Mon Sep 17 00:00:00 2001
+From: jiaweiyuan <shuaige@shuaige>
+Date: Wed, 11 Nov 2026 23:05:52 +0800
+Subject: [PATCH] Add configurable greeting name
+
+---
+ README.md | 1 +
+ app.py    | 8 +++++++-
+ 2 files changed, 8 insertions(+), 1 deletion(-)
+
+diff --git a/README.md b/README.md
+index 9dcba76..21276c3 100644
+--- a/README.md
++++ b/README.md
+@@ -6,6 +6,7 @@
+ 
+ ```bash
+ python3 app.py
++python3 app.py --name 小明
+ ```
+ 
+ 查看分支：
+diff --git a/app.py b/app.py
+index f6af9de..966f448 100644
+--- a/app.py
++++ b/app.py
+@@ -1,6 +1,12 @@
++import argparse
++
++
+ def greet(name):
+     return f"Hello, {name}!"
+ 
+ 
+ if __name__ == "__main__":
+-    print(greet("Git learner"))
++    parser = argparse.ArgumentParser(description="输出一条问候语")
++    parser.add_argument("--name", default="Git learner", help="要问候的名字")
++    args = parser.parse_args()
++    print(greet(args.name))
+-- 
+2.50.1 (Apple Git-155)
+
