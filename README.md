@@ -6,6 +6,7 @@
 
 ```bash
 python3 app.py
+python3 app.py --name 小明
 ```
 
 查看分支：
