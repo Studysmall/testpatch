@@ -13,7 +13,7 @@ class GreetTest(unittest.TestCase):
     def test_greet_with_custom_name(self):
         self.assertEqual(
             greet("xiaoming"),
-            "WRONG RESULT",,
+            "Hello from receiver, xiaoming!",
         )
 
 
